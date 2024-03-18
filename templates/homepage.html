@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ url_for('static', filename='js/mobile-menu.js') }}?v={{ version }}"></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}?v={{ version }}">
+  </head>
+  <body>
+    <header>
+        <nav class="flex items-center justify-between py-4 px-6 bg-white dark:bg-gray-800 shadow-md">
+            <div class="flex items-center">
+                <a href="/" class="text-xl font-bold text-gray-800 dark:text-white">Logo</a>
+                <div class="hidden md:flex ml-10 space-x-4 nav-links">
+                    <a href="/" class="px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Home</a>
+                    <a href="#" class="px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">About</a>
+                    <a href="#" class="px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Blog</a>
+                    <a href="#" class="px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Services</a>
+                    <a href="#" class="block md:hidden px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Login</a>
+                    <a href="#" class="block md:hidden px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Sign Up</a>
+                    <a href="#" class="px-3 py-2 text-sm font-medium rounded-md text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="md:hidden">
+                <button aria-label="Toggle menu" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white menu-btn">
+                    <svg class="h-6 w-6 text-gray-500 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="hidden md:flex items-center">
+                <a href="#" class="text-gray-800 dark:text-white">Login</a>
+                <a href="#" class="ml-4 px-4 py-2 text-sm font-medium rounded-md bg-blue-500 text-white">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-4xl mx-auto px-4">
+            <!-- Hero Section -->
+            <section class="text-center py-12 md:py-24">
+                <h1 class="text-4xl font-bold md:text-6xl lg:text-7xl">
+                    Connecting Families & Baby Nurses
+                </h1>
+                <p class="max-w-md mx-auto text-gray-500 md:text-xl lg:text-xl xl:text-xl dark:text-gray-400 mt-6">
+                    Whether you’re seeking the perfect baby nurse for your family or you’re a professional nurse looking for your next opportunity, Sleepy Time is here to support you.
+                </p>
+            </section>
+            
+            <!-- Services for Families -->
+            <section class="py-12 md:py-24 lg:py-32 border-t">
+                <h2 class="text-3xl font-bold text-center mb-10">Services for Families</h2>
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-10 md:gap-6 lg:gap-10 xl:gap-12 grid-menu">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/charity.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Overnight Care</h3>
+                        <p class="text-gray-200">Ensure a good night's sleep for both parents and baby with our overnight care services.</p>
+                    </div>
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/breastfeed.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Lactation Support</h3>
+                        <p class="text-gray-200">Get expert guidance and support for breastfeeding and lactation.</p>
+                    </div>
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/love.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Newborn Care Education</h3>
+                        <p class="text-gray-200">Learn essential skills and knowledge to care for your newborn.</p>
+                    </div>
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/mother.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Postpartum Support</h3>
+                        <p class="text-gray-200">Receive emotional and practical support during the postpartum period.</p>
+                    </div>
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/baby.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Childcare Services</h3>
+                        <p class="text-gray-200">Find reliable and experienced childcare services for your family.</p>
+                    </div>
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                        <img src="{{ url_for('static', filename='svg/reading-book.svg') }}" alt="" class="white-svg mx-auto">
+                        <h3 class="text-xl font-bold mb-2 text-white text-center">Parenting Guidance</h3>
+                        <p class="text-gray-200">Learn valuable parenting skills and techniques through our blog and weekly email newsletters.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Opportunities for Nurses -->
+            <section class="py-12 md:py-24 lg:py-32 border-t bg-gray-100">
+                <h2 class="text-3xl font-bold text-center mb-10">Join Our Team</h2>
+                <p class="text-center max-w-xl mx-auto mb-12">
+                    Are you a certified baby nurse looking for a rewarding opportunity? Join our team to connect with families in need of your expertise and care.
+                </p>
+                <div class="flex justify-center">
+                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      Apply Now
+                    </a>
+                </div>
+            </section>
+        
+            <!-- Testimonials or Success Stories -->
+            <section class="py-12 md:py-24 lg:py-32">
+                <h2 class="text-3xl font-bold text-center mb-10">Success Stories</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo euismod, aliquet nunc id, aliquam nunc. Nullam nec metus euismod, lacinia nunc a, luctus justo."</p>
+                        <p class="text-black mt-4">- John Doe</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-black">"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vitae justo euismod, aliquet nunc id, aliquam nunc."</p>
+                        <p class="text-black mt-4">- Jane Smith</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <p class="text-black">"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae justo euismod, aliquet nunc id, aliquam nunc."</p>
+                        <p class="text-black mt-4">- David Johnson</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t justify-center ">
+        <p class="text-xs text-gray-500 dark:text-gray-400 text-center">Sleepy Time Baby Nurse LLC® 2024 Rights Reserved</p>
+    </footer>
+</body>
+</html>

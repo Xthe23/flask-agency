@@ -1,0 +1,36 @@
+/* Custom CSS for showing the menu */
+.nav-links.is-active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    color: black; /* Set font color to black */
+    background-color: rgb(31, 41, 55, var(--tw-bg-opacity));
+    width: 89vw;
+    top: 65px; /* Adjust based on your navbar's height */
+    left: 0;
+    z-index: 10;
+}
+
+/* Optional: Style for active menu button */
+.menu-btn.is-active svg {
+    color: #4a5568; /* Darker shade for the icon */
+}
+
+.white-svg {
+    filter: brightness(0) invert(1);
+    max-width: 50%; /* Adjust the percentage value as needed */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+
+.white-svg:hover {
+    transform: translateY(-10px); /* Adjust the value to control the levitation height */
+}
+
+@media (max-width: 767px) {
+    .grid-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
