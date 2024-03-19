@@ -1,31 +1,75 @@
-/* Custom CSS for showing the menu */
+/* Base styles for the navbar */
+#navbar {
+    transition: top 0.3s;
+    position: fixed; /* Keep navbar fixed at the top */
+    top: -100%; /* Initially hidden */
+    width: 100%;
+    z-index: 30; /* Ensure it's above other content */
+    background-color: rgba(31, 41, 55); /* Consistent navbar background */
+    color: white; /* Default text color */
+}
+
+/* Sticky class added via JS when scrolling up */
+.sticky {
+    top: 0; /* Show navbar */
+}
+
+/* When the .show class is added, 'top' changes to '0' */
+#navbar.show {
+    top: 0; /* Bring into view */
+}
+
+main {
+    padding-top: 5rem;
+
+}
+
+/* Styles for the active mobile menu */
 .nav-links.is-active {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    color: black; /* Set font color to black */
-    background-color: rgb(31, 41, 55, var(--tw-bg-opacity));
-    width: 89vw;
+    position: absolute; /* Positioning relative to its nearest positioned ancestor */
+    background-color: rgba(31, 41, 55);
     top: 65px; /* Adjust based on your navbar's height */
     left: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
-/* Optional: Style for active menu button */
-.menu-btn.is-active svg {
-    color: #4a5568; /* Darker shade for the icon */
+/* Navbar link styles */
+#navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
 }
 
-.white-svg {
+/* Styles for interactive elements */
+.menu-btn.is-active svg, .white-svg {
     filter: brightness(0) invert(1);
-    max-width: 50%; /* Adjust the percentage value as needed */
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+    transition: transform 0.3s ease-in-out;
 }
 
 .white-svg:hover {
-    transform: translateY(-10px); /* Adjust the value to control the levitation height */
+    animation: jump 0.8s infinite alternate;
 }
 
+/* Animation for SVG icons */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hover effect for the navbar */
+nav:hover {
+    background-color: rgb(83, 106, 136);
+}
+
+/* Responsive grid menu for smaller screens */
 @media (max-width: 767px) {
     .grid-menu {
         display: grid;
