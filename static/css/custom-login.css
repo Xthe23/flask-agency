@@ -1,0 +1,75 @@
+/* Ensure full height of the viewport */
+body {
+    margin:0;
+    padding:0;
+    background: linear-gradient(#141e30, #243b55);
+    font-family: fangsong;
+  }
+  
+/* The main container will use flexbox to center its children and min-h screen utility to take up at least the height of the screen */
+.flex-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background: linear-gradient(#141e30, #243b55);
+  }
+  
+#login-text {
+    font-family: fangsong
+}
+
+#login-btn {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/* Responsive styles for the login box */
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 10rem;
+    max-width: 100%; /* Start with full width on mobile */
+    margin: auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, .2);
+  }
+  
+  .mobile-menu{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+    width: 40rem;
+    height: 34rem;
+}
+  
+  @media (max-width: 767px) {
+  
+    .flex-centering {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 1rem;
+      border-radius: 0;
+    }
+    .mobile-menu{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        width: 21rem;
+    }
+}
+
+/* On larger screens, we constrain the width to a maximum and adjust padding */
+@media (min-width: 768px) {
+    .login-box {
+      max-width: 400px;
+      padding: 2rem;
+    }
+  }
