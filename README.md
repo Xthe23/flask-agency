@@ -49,13 +49,20 @@ These models are essential for the application's functionality, allowing for eff
 
 Some images of the Agency Flask Web Application in Desktop and Mobile: Profile, Registration
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
-    <img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img1.png" alt="Image 1" style="max-width: 45%; height: auto;">
-    <img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img2.png" alt="Image 2" style="max-width: 45%; height: auto;">
-    <img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img3.png" alt="Image 3" style="max-width: 45%; height: auto;">
-    <img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img4.png" alt="Image 4" style="max-width: 45%; height: auto;">
-    <img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img6.png" alt="Image 5" style="max-width: 45%; height: auto;">
-</div>
+<table>
+  <tr>
+    <td><img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img1.png" alt="Img" width="400"/></td>
+    <td><img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img2.png" alt="Img" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img3.png" alt="Img" width="400"/></td>
+    <td><img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img4.png" alt="Img" width="400"/></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="https://github.com/Xthe23/flask-agency/blob/main/Resources/img6.png" alt="Img" width="400"/></td>
+  </tr>
+</table>
+
 
 
 Leveraging Jinja tags, I implemented conditional logic to display the resume upload feature exclusively for users identified as either Workers or Clients on the profile route.
