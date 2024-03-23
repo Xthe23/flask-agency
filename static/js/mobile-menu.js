@@ -58,4 +58,4 @@ function handleScroll() {
 }
 
 // Apply the throttle function to the scroll event
-window.addEventListener("scroll", throttle(handleScroll, 100), false);
+window.addEventListener("scroll", throttle(handleScroll, 500), false);
