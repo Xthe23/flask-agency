@@ -14,7 +14,7 @@
             <!-- This button is shown in mobile view -->
             <button aria-label="Toggle menu" class="md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white menu-btn">
                 <svg class="h-6 w-6 text-gray-500 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                    <path class="menu-ham" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
                 </svg>
             </button>
             <!-- Mobile menu, hidden by default and toggled by JavaScript -->
@@ -26,11 +26,16 @@
                     <a href="#" class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 nav-text">Services</a>
                     <a href="#" class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 nav-text">Contact</a>
                 </div>
+                <div class="hidden-nav">
+                    <a href="/login" class="text-gray-800 dark:text-white">Login</a>
+                    <a href="/register" class="text-gray-800 dark:text-white">Register</a>
+                </div>
             </div>
+
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center">
-                <a href="#" class="text-gray-800 dark:text-white">Login</a>
-                <a href="#" class="ml-4 px-4 py-2 text-sm font-medium rounded-md bg-blue-500 text-white">Sign Up</a>
+                <a href="/login" class="text-gray-800 dark:text-white">Login</a>
+                <a href="/register" class="ml-4 px-4 py-2 text-sm font-medium rounded-md bg-blue-500 text-white">Register</a>
             </div>
         </nav>
     </header>
@@ -50,35 +55,35 @@
             <section class="py-12 md:py-24 lg:py-32 border-t">
                 <h2 class="text-3xl font-bold text-center mb-10">Services for Families</h2>
                 <div class="grid md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-10 md:gap-6 lg:gap-10 xl:gap-12 grid-menu">
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/charity.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Overnight Care</h3>
-                        <p class="text-gray-200">Ensure a good night's sleep for both parents and baby with our overnight care services.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Ensure a good night's sleep for both parents and baby with our overnight care services.</p>
                     </div>
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/breastfeed.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Lactation Support</h3>
-                        <p class="text-gray-200">Get expert guidance and support for breastfeeding and lactation.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Get expert guidance and support for breastfeeding and lactation.</p>
                     </div>
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/love.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Newborn Care Education</h3>
-                        <p class="text-gray-200">Learn essential skills and knowledge to care for your newborn.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Learn essential skills and knowledge to care for your newborn.</p>
                     </div>
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/mother.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Postpartum Support</h3>
-                        <p class="text-gray-200">Receive emotional and practical support during the postpartum period.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Receive emotional and practical support during the postpartum period.</p>
                     </div>
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/baby.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Childcare Services</h3>
-                        <p class="text-gray-200">Find reliable and experienced childcare services for your family.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Find reliable and experienced childcare services for your family.</p>
                     </div>
-                    <div class="bg-blue-500 rounded-lg shadow-lg p-6">
+                    <div class="bg-blue-500 rounded-lg shadow-lg p-6 mobile-card">
                         <img src="{{ url_for('static', filename='svg/reading-book.svg') }}" alt="" class="white-svg mx-auto">
                         <h3 class="text-xl font-bold mb-2 text-white text-center">Parenting Guidance</h3>
-                        <p class="text-gray-200">Learn valuable parenting skills and techniques through our blog and weekly email newsletters.</p>
+                        <p class="text-gray-200 mobile-card-text-p">Learn valuable parenting skills and techniques through our blog and weekly email newsletters.</p>
                     </div>
                 </div>
             </section>
