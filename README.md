@@ -46,3 +46,14 @@ The `Profile` model manages additional user details, allowing users to enrich th
 - `start_date`, `end_date`: Optional fields indicating the preferred time range for activities or work.
 
 These models are essential for the application's functionality, allowing for efficient data handling and storage. The use of Flask-SQLAlchemy simplifies database operations, making it straightforward to perform CRUD operations on these models.
+
+Some images of the Agency Flask Web Application in Desktop and Mobile: Profile, Registration
+
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img1.png)
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img2.png)
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img3.png)
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img4.png)
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img5.png)
+![Img](https://github.com/Xthe23/flask-agency/blob/main/Resources/img6.png)
+
+Leveraging Jinja tags, I implemented conditional logic to display the resume upload feature exclusively for users identified as either Workers or Clients on the profile route.
