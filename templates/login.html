@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock %} {% block
+  content %}
+  
+  <div class="row">
+    <div class="col-lg-5 col-12 mx-auto">
+      <form class="custom-form login-form" role="form" method="POST">
+        {{ form.hidden_tag() }}
+  
+        <h2 class="hero-title text-center mb-4 pb-2">Login</h2>
+  
+        <div class="form-floating mb-4 p-0">
+           {{ form.email(class='form-control', id='email') }}
+           <label for="username" class="form-label">Email</label>
+        </div>
+  
+        <div class="form-floating p-0">
+            {{ form.password(class='form-control', id='password') }}
+            <label for="password" class="form-label">Password</label>
+        </div>
+  
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-5 col-12">
+            <button type="submit" class="form-control">Login</button>
+          </div>
+  
+          <div class="col-lg-5 col-12">
+            <a
+              href="{{url_for('auth.register')}}"
+              class="btn custom-btn custom-border-btn"
+              >Register</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  {% endblock %}
+  

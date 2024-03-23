@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom-profile.css') }}?v={{ version }}">
+
+<div class="row">
+  <div class="col-lg-6 col-12 mx-auto">
+    <form class="custom-form" role="form" method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+
+      <h2 class="hero-title text-center mb-4 pb-2">Profile Data</h2>
+      <div class="row">
+        <!-- Email -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.email(class='form-control', id='email', readonly=true, value=current_user.email) }}
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        {% if current_user.role != 'client' %}
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.resume(class='form-control', id='resume') }}
+            <label for="resume">Upload Resume</label>
+            {% if existing_profile and existing_profile.resume_filename %}
+            <p>Current File: {{ existing_profile.resume_filename }}</p>
+            {% else %}
+            <p>No file uploaded.</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Address -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.address(class='form-control', id='address', value=existing_profile.address) }}
+            <label for="address">Address</label>
+          </div>
+        </div>
+
+        <!-- City -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.city(class='form-control', id='city', value=existing_profile.city) }}
+            <label for="city">City</label>
+          </div>
+        </div>
+
+        <!-- State -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.state(class='form-control', id='state', value=existing_profile.state) }}
+            <label for="state">State</label>
+          </div>
+        </div>
+
+        <!-- Zip Code -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.zip_code(class='form-control', id='zip_code', value=existing_profile.zip_code) }}
+            <label for="zip_code">Zip Code</label>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.phone(class='form-control', id='phone', value=existing_profile.phone) }}
+            <label for="phone">Phone</label>
+          </div>
+        </div>
+
+        <!-- Time Start and Time End -->
+        <!-- Ensure you handle the date formatting appropriately in your Python code before rendering -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.start_date(class='form-control', id='start_date', value=existing_profile.start_date.strftime('%H:%M') if existing_profile.start_date else '') }}
+            <label for="start_date">Start Time</label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-floating">
+            {{ form.end_date(class='form-control', id='end_date', value=existing_profile.end_date.strftime('%H:%M') if existing_profile.end_date else '') }}
+            <label for="end_date">End Time</label>
+          </div>
+        </div>
+
+        <!-- Schedule Preferences as provided -->
+        <div class="col-12 mt-3">
+          <label>Schedule Preference</label><br />
+          <!-- Example for Monday; replicate for other days -->
+          <!-- Add the rest of the week's schedule preferences here -->
+            <div class="form-check form-check-inline">
+              {{ form.schedule_monday(class='form-check-input', id='schedule_monday', checked=existing_profile.schedule_monday) }}
+              <label class="form-check-label" for="schedule_monday">Monday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_tuesday(class='form-check-input', id='schedule_tuesday', checked=existing_profile.schedule_tuesday) }}
+              <label class="form-check-label" for="schedule_tuesday">Tuesday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_wednesday(class='form-check-input', id='schedule_wednesday', checked=existing_profile.schedule_wednesday) }}
+              <label class="form-check-label" for="schedule_wednesday">Wednesday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_thursday(class='form-check-input', id='schedule_thursday', checked=existing_profile.schedule_thursday) }}
+              <label class="form-check-label" for="schedule_thursday">Thursday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_friday(class='form-check-input', id='schedule_friday', checked=existing_profile.schedule_friday) }}
+              <label class="form-check-label" for="schedule_friday">Friday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_saturday(class='form-check-input', id='schedule_saturday', checked=existing_profile.schedule_saturday) }}
+              <label class="form-check-label" for="schedule_saturday">Saturday</label>
+            </div>
+            <div class="form-check form-check-inline">
+              {{ form.schedule_sunday(class='form-check-input', id='schedule_sunday', checked=existing_profile.schedule_sunday) }}
+              <label class="form-check-label" for="schedule_sunday">Sunday</label>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="row justify-content-center align-items-center mt-4">
+        <div class="col-lg-5 col-md-5 col-5 ms-auto">
+          <button type="submit" class="btn btn-primary form-control">Update Profile</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

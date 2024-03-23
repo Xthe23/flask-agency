@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Sleepy Time Agency {% block title %} {% endblock %}</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom-login.css') }}?v={{ version }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/tooplate-kool-form-pack.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-12 col-12 d-flex align-items-center">
+              <a
+                class="site-header-text d-flex justify-content-center align-items-center me-auto"
+                href="/"
+              >
+                <i class="bi-box"></i>
+
+                <span> Home </span>
+              </a>
+
+              <a
+                class="bi-list offcanvas-icon"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasMenu"
+                role="button"
+                aria-controls="offcanvasMenu"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="offcanvas offcanvas-end"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="offcanvasMenu"
+        aria-labelledby="offcanvasMenuLabel"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div
+          class="offcanvas-body d-flex flex-column justify-content-center align-items-center"
+        >
+          <nav>
+              <ul>
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">{{current_user.username}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}"> Logout </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{  url_for('auth.login') }}">Login </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('auth.register') }}">Register </a>
+                    </li>
+
+                {% endif %}
+
+              </ul>
+          </nav>
+        </div>
+      </div>
+
+
+      </div>
+
+      <section
+        class="hero-section d-flex justify-content-center align-items-center"
+        id="section_1"
+      >
+        <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %} 
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" role="alert" style="margin-top:40px;">{{ message }}</div>
+            {% endfor %} 
+        {% endif %} 
+        {% endwith %}
+            {% block content %} {% endblock %}
+        </div>
+      </section>
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+  </body>
+</html>
