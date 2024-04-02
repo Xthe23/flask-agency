@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.mobile-nav'); // Updated selector to match your HTML structure
     menuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('is-active');
+        navLinks.classList.toggle('hidden'); // Toggle 'hidden' class for Tailwind CSS
     });
 
     // Initialize navbar state based on initial scroll position as soon as the DOM is fully loaded
@@ -58,4 +58,4 @@ function handleScroll() {
 }
 
 // Apply the throttle function to the scroll event
-window.addEventListener("scroll", throttle(handleScroll, 500), false);
+window.addEventListener("scroll", throttle(handleScroll, 300), false);
