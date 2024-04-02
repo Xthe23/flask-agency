@@ -2,10 +2,9 @@
 {% block title %}Profile{% endblock %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom-profile.css') }}?v={{ version }}">
-
 <div class="row">
   <div class="col-lg-6 col-12 mx-auto">
-    <form class="custom-form" role="form" method="POST" enctype="multipart/form-data">
+    <form class="custom-form" role="form" method="POST" enctype="multipart/form-data" id="custom-form">
       {{ form.hidden_tag() }}
 
       <h2 class="hero-title text-center mb-4 pb-2">Profile Data</h2>

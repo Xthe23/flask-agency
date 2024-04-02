@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Newborn Care Specialist Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}?v={{ version }}">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <header>
+        <nav class="flex items-center justify-between py-4 px-6 shadow-md nav-bar top-0 z-30" id="navbar">
+            <a href="/" class="text-xl font-bold nav-text">Gentle Star Care Agency</a>
+
+            <!-- Grouping right-aligned items in a div -->
+            <div class="flex items-center">
+                <!-- This button is shown in mobile view -->
+                <button aria-label="Toggle menu"
+                    class="md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white menu-btn">
+                    <svg class="h-6 w-6 text-gray-500 dark:text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path class="menu-ham" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-16 6h16"></path>
+                    </svg>
+                </button>
+                <!-- Mobile menu, hidden by default and toggled by JavaScript -->
+                <div class="hidden mobile-nav nav-links md:flex md:items-center w-full md:w-auto" id="menu">
+                    <div class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                        <a href="/" class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 nav-text"
+                            aria-current="page">Home</a>
+                        <a href="/about" class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 nav-text">About Us</a>
+
+                        {% if request.endpoint == 'main_page' %}
+                        <a href="#" class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 nav-text">Contact</a>
+                        {% endif %}                    
+                    </div>
+                    <div class="hidden-nav">
+                        <a href="/login" class="text-gray-800 dark:text-white">Login</a>
+                        <a href="/register" class="text-gray-800 dark:text-white">Register</a>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center">
+                    <a href="/login" class="text-gray-800 dark:text-white">Login</a>
+                    <a href="/register"
+                        class="ml-4 px-4 py-2 text-sm font-medium rounded-md bg-blue-500 text-white">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="">
+        <div class="w-full max-w-4xl mx-auto px-4 py-8">
+            <section class="text-center py-12 md:py-24">
+                <h1 class="text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl">
+                    Thank you! Your message has been sent.
+                </h1>
+                <p class="max-w-2xl mx-auto text-base text-gray-600 md:text-lg lg:text-xl mt-6">
+                    We will get back to you shortly.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t justify-center ">
+        <p>Sleepy Time Baby Nurse LLC® 2024 Rights Reserved</p>
+        <a href="/legal" class="text-gray-500 hover:text-gray-700 ml-1">Legal</a>
+    </footer>
+    <script src="{{ url_for('static', filename='js/mobile-menu.js') }}?v={{ version }}"></script>
+</body>
+
+</html>
