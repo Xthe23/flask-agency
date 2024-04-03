@@ -12,8 +12,13 @@ The Agency Flask Application is a robust web platform built with Flask, designed
 
 ## Technologies Used
 
-- Flask
-- SQLAlchemy
+- SQLAlchemy (For local DB testing)
+- AWS SDK for Python (Boto3)
+- Amazon Web Servers:
+- Amazon RDS for Database
+- Amazon S3 for File Storage System
+- Amazon EC2 for Web Application Hosting
+- Flask:
 - Flask-Migrate for database migrations
 - Flask-Login for managing user sessions
 - Flask-WTF for form handling and CSRF protection
