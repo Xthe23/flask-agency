@@ -2,6 +2,8 @@
 
 The Agency Flask Application is a robust web platform built with Flask, designed to manage user registrations, logins, and profile updates. It integrates a secure file upload system, allowing users to upload and manage resumes seamlessly. Leveraging Flask's flexibility and the power of SQLAlchemy, this application offers a solid foundation for any agency's personnel management needs. Targeted at recruitment agencies, HR departments, and freelancers, this application simplifies the process of managing candidate profiles and job applications, making it an ideal solution for small to medium-sized enterprises (SMEs) looking to streamline their hiring process.
 
+**Please Note:** This is an ongoing project of mine, but very soon to completion! Thanks for all the unique clones and traffic. Very appreciative and humbled.
+
 ## Features
 
 - **User Authentication**: A secure login and registration system that leverages Flask and werkzeug's advanced Web Server Gateway Interface (WSGI) to ensures high standards of security while facilitating the creation and management of user sessions with ease.
