@@ -8,7 +8,7 @@ The Agency Flask Application is a robust web platform built with Flask, designed
 - **Profile Management**: Users can update personal information, add a resume (docx or pdf with a 5mb limit), and update their schedule.
 - **Resume Upload**: Secure upload feature for resumes, supporting PDF and DOCX formats, tied directly to the user's profile.
 - **Scalable Database Architecture**: Utilizes the robustness of SQLAlchemy with the versatility of Amazon RDS PostgreSQL, providing seamless scaling capabilities and reliable data storage and retrieval mechanisms.
-- **Enhanced Security Measures**: Employs Flask-Bcrypt for password hashing and also integrates comprehensive CSRF protection for all forms, ensuring that user credentials and data are managed with utmost security.
+- **Enhanced Security Measures**: Employs werkzeug for password hashing and also integrates comprehensive CSRF protection for all forms, ensuring that user credentials and data are managed with utmost security.
 
 ## Environment Configuration Guide
 
@@ -160,4 +160,4 @@ Some images of the Agency Flask Web Application in Desktop and Mobile: Profile, 
   - **Flask-Migrate**: For database migrations.
   - **Flask-Login**: For managing user sessions.
   - **Flask-WTF**: For form handling and CSRF protection.
-  - **Flask-Bcrypt**: For hashing and checking passwords securely.
+- **werkzeug**: For password hash creation and checking.
