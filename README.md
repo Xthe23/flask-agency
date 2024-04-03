@@ -7,7 +7,7 @@ The Agency Flask Application is a robust web platform built with Flask, designed
 - **User Authentication**: A secure login and registration system that leverages Flask and werkzeug's advanced Web Server Gateway Interface (WSGI) to ensures high standards of security while facilitating the creation and management of user sessions with ease.
 - **Profile Management**: Users can update personal information, add a resume (docx or pdf with a 5mb limit), and update their schedule.
 - **Resume Upload**: Secure upload feature for resumes, supporting PDF and DOCX formats, tied directly to the user's profile.
-- **Scalable Database Architecture**: Utilizes the robustness of SQLAlchemy with the versatility of Amazon RDS PostgreSQL, providing seamless scaling capabilities and reliable data storage and retrieval mechanisms.
+- **Scalable Database Architecture**: Utilizes the robustness of SQLAlchemy with the versatility of Amazon RDS, providing seamless scaling capabilities and reliable data storage and retrieval mechanisms.
 - **Enhanced Security Measures**: Employs werkzeug for password hashing and also integrates comprehensive CSRF protection for all forms, ensuring that user credentials and data are managed with utmost security.
 
 ## Environment Configuration Guide
