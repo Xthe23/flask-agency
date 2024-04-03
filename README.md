@@ -7,8 +7,8 @@ The Agency Flask Application is a robust web platform built with Flask, designed
 - **User Authentication**: A secure login and registration system that leverages Flask and werkzeug's advanced Web Server Gateway Interface (WSGI) to ensures high standards of security while facilitating the creation and management of user sessions with ease.
 - **Profile Management**: Users can update personal information, add a resume (docx or pdf with a 5mb limit), and update their schedule.
 - **Resume Upload**: Secure upload feature for resumes, supporting PDF and DOCX formats, tied directly to the user's profile.
-- **Scalable Database Architecture**: Utilizes the robustness of SQLAlchemy with the versatility of Amazon RDS PostgreSQL, providing seamless scaling capabilities and reliable data storage and retrieval mechanisms.
-- **Enhanced Security Measures**: Employs Flask-Bcrypt for password hashing and also integrates comprehensive CSRF protection for all forms, ensuring that user credentials and data are managed with utmost security.
+- **Scalable Database Architecture**: Utilizes the robustness of SQLAlchemy with the versatility of Amazon RDS, providing seamless scaling capabilities and reliable data storage and retrieval mechanisms.
+- **Enhanced Security Measures**: Employs werkzeug for password hashing and also integrates comprehensive CSRF protection for all forms, ensuring that user credentials and data are managed with utmost security.
 
 ## Environment Configuration Guide
 
@@ -97,7 +97,7 @@ S3_REGION=your-bucket-region-here
 
 ## Database Models
 
-The `models.py` file defines the SQLAlchemy ORM models that serve as the foundation for the application's database. It includes two main models: `User` and `Profile`. Below you can see the Entity-Relationship Diagram.
+The `models.py` file defines the ORM models that serve as the foundation for the application's database. It includes two main models: `User` and `Profile`. Below you can see the Entity-Relationship Diagram.
 
 ### Entity-Relationship Diagram
 <p align="center">
@@ -153,11 +153,11 @@ Some images of the Agency Flask Web Application in Desktop and Mobile: Profile, 
 - **SQLAlchemy**: For local DB testing.
 - **AWS SDK for Python (Boto3)**.
 - **Amazon Web Services**:
-  - **Amazon RDS:**: PostgresSQL Database
+  - **Amazon RDS**: PostgresSQL Database
   - **Amazon S3**: Persistent File Storage System
   - **Amazon EC2**: Web Application Hosting
 - **Flask**:
   - **Flask-Migrate**: For database migrations.
   - **Flask-Login**: For managing user sessions.
   - **Flask-WTF**: For form handling and CSRF protection.
-  - **Flask-Bcrypt**: For hashing and checking passwords securely.
+- **werkzeug**: For password hash creation and checking.
