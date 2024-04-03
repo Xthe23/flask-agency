@@ -153,7 +153,7 @@ Some images of the Agency Flask Web Application in Desktop and Mobile: Profile, 
 - **SQLAlchemy**: For local DB testing.
 - **AWS SDK for Python (Boto3)**.
 - **Amazon Web Services**:
-  - **Amazon RDS:**: PostgresSQL Database
+  - **Amazon RDS**: PostgresSQL Database
   - **Amazon S3**: Persistent File Storage System
   - **Amazon EC2**: Web Application Hosting
 - **Flask**:
