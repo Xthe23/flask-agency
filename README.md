@@ -97,7 +97,7 @@ S3_REGION=your-bucket-region-here
 
 ## Database Models
 
-The `models.py` file defines the SQLAlchemy ORM models that serve as the foundation for the application's database. It includes two main models: `User` and `Profile`. Below you can see the Entity-Relationship Diagram.
+The `models.py` file defines the ORM models that serve as the foundation for the application's database. It includes two main models: `User` and `Profile`. Below you can see the Entity-Relationship Diagram.
 
 ### Entity-Relationship Diagram
 <p align="center">
